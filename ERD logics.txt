@@ -1,0 +1,8 @@
+one employee can have 1 employee no. One employee no belongs to only one employee (one to One).
+
+one employee can have one title id. One title id can belong to many employees (one to many and many to One)
+
+one employee can have only one salary and one salary can belong to many employees (one to one and many to one)
+
+many employees can belong to one dept number/name and each dept name/number can have many employees (many to many)
+
