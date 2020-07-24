@@ -1,14 +1,5 @@
 ﻿-- Exported from QuickDBD: https://www.quickdatabasediagrams.com/
 -- NOTE! If you have used non-SQL datatypes in your design, you will have to change these here.
--drop tables if already existing 
-
-
-drop table if EXISTS departments
-drop table if EXISTS dept_manager
-drop table if EXISTS titles
-drop table if EXISTS salaries
-drop table if EXISTS employees
-drop table if EXISTS dept_emp
 
 
 CREATE TABLE "departments" (
@@ -34,10 +25,7 @@ CREATE TABLE "titles" (
 
 CREATE TABLE "salaries" (
     "emp_no" integer   NOT NULL,
-    "salary" integer   NOT NULL,
-    CONSTRAINT "pk_salaries" PRIMARY KEY (
-        "emp_no"
-     )
+    "salary" integer   NOT NULL
 );
 
 CREATE TABLE "employees" (
@@ -58,15 +46,18 @@ CREATE TABLE "dept_emp" (
     "dept_no" varchar(10)   NOT NULL
 );
 
-ALTER TABLE "departments" ADD CONSTRAINT "fk_departments_dept_no" FOREIGN KEY("dept_no")
-REFERENCES "dept_emp" ("dept_no");
+ALTER TABLE "dept_manager" ADD CONSTRAINT "fk_dept_manager_dept_no" FOREIGN KEY("dept_no")
+REFERENCES "departments" ("dept_no");
 
-ALTER TABLE "employees" ADD CONSTRAINT "fk_employees_emp_no" FOREIGN KEY("emp_no")
-REFERENCES "salaries" ("salary");
+ALTER TABLE "dept_manager" ADD CONSTRAINT "fk_dept_manager_emp_no" FOREIGN KEY("emp_no")
+REFERENCES "employees" ("emp_no");
 
-ALTER TABLE "employees" ADD CONSTRAINT "fk_employees_emp_title" FOREIGN KEY("emp_title")
-REFERENCES "titles" ("title_id");
+ALTER TABLE "salaries" ADD CONSTRAINT "fk_salaries_emp_no" FOREIGN KEY("emp_no")
+REFERENCES "employees" ("emp_no");
 
 ALTER TABLE "dept_emp" ADD CONSTRAINT "fk_dept_emp_emp_no" FOREIGN KEY("emp_no")
 REFERENCES "employees" ("emp_no");
+
+ALTER TABLE "dept_emp" ADD CONSTRAINT "fk_dept_emp_dept_no" FOREIGN KEY("dept_no")
+REFERENCES "departments" ("dept_no");
 
