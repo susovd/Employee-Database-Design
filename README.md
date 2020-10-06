@@ -20,8 +20,6 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-![sql.png](sql.png)
-
 ## Background
 
 In this project, I use six csv files to design the tables to hold data in the CSVs, import the CSVs into a PostgreSQL database, and answer questions about the data.
