@@ -14,14 +14,9 @@
 
 * [About the Project](#about-the-project)
   * [Built With](#built-with)
-* [Usage](#usage)
+* [Results](#results)
 * [Getting Started](#getting-started)
-  * [Heroku](#heroku)
-  * [Local](#local)
-* [Contributors](#contributors)
-* [Acknowledgements](#acknowledgements)
-
-
+  
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
@@ -64,6 +59,11 @@ Once the database was complete, I accomplished the following:
 
 ### Built With
 * [PostgreSQL](https://www.postgresql.org/)
+
+## Results
+Here is my ERD diagram I designed. 
+
+<img src="Susov_ERD_final_24072020.png">
 
 <!-- GETTING STARTED -->
 ## Getting Started
